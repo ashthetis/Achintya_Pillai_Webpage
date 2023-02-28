@@ -45,12 +45,13 @@
 #myTable tr.header, #myTable tr:hover {
   background-color: #f1f1f1;
 }
+
 </style>
 </head>
 <body>
 
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
-
+<div style="overflow-x:auto;">
 <table border="1" class="dataframe" id="myTable">
   <thead>
     <tr class="header" style="text-align: right;">
@@ -1401,6 +1402,7 @@
     </tr>
   </tbody>
 </table>
+</div>
 <script>
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
