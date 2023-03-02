@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+.job-search {
+    position: sticky;   /* The magic */
+    z-index: 1;         /* Ensure it stays on top of other player divs */
+    top: 0px;           /* Where it should stick to */
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  position: sticky;   /* The magic */
+  z-index: 1;         /* Ensure it stays on top of other player divs */
+  top: 0px; 
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+td,th,tr {
+  font-size: calc(.5em + .5vw);
+}
+
+</style>
+</head>
+<body>
+
+<input type="text" id="myInput" onkeyup="myRole()" placeholder="Search for ROLE.." title="Type in a name">
+<div style="overflow-x:auto;">
+<table border="1" class="dataframe" id="myTable">
+  <thead>
+    <tr class="header" style="text-align: right;">
+      <th></th>
+      <th style="width:25%;">Company Name</th>
+      <th style="width:25%;">Role</th>
+      <th style="width:25%;">Salary($)</th>
+      <th style="width:25%;">Location(USA)</th>
+    </tr>
+  </thead>
+  <div class="example">
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>LYFT</td>
+      <td>ANDROID ENGINEER</td>
+      <td>130,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>LYFT</td>
+      <td>ANDROID ENGINEER</td>
+      <td>130,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>LYFT</td>
+      <td>BRAND DIGITAL DESIGNER</td>
+      <td>75,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>LYFT</td>
+      <td>BRAND DIGITAL DESIGNER</td>
+      <td>75,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>LYFT</td>
+      <td>DATA SCIENTIST</td>
+      <td>150,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>LYFT</td>
+      <td>SENIOR ANDROID ENGINEER</td>
+      <td>175,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>LYFT</td>
+      <td>SENIOR ANDROID ENGINEER</td>
+      <td>175,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>LYFT</td>
+      <td>SENIOR ANDROID ENGINEER</td>
+      <td>180,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>LYFT</td>
+      <td>SENIOR ANDROID ENGINEER</td>
+      <td>180,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>LYFT</td>
+      <td>SENIOR ENGINEER</td>
+      <td>135,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>LYFT</td>
+      <td>SENIOR WEB DEVELOPER</td>
+      <td>140,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>LYFT</td>
+      <td>SOFTWARE ENGINEER</td>
+      <td>135,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>LYFT</td>
+      <td>SOFTWARE ENGINEER</td>
+      <td>135,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>LYFT</td>
+      <td>SOFTWARE ENGINEER</td>
+      <td>140,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>LYFT</td>
+      <td>SOFTWARE ENGINEER</td>
+      <td>140,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>LYFT</td>
+      <td>SOFTWARE ENGINEER</td>
+      <td>140,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>LYFT</td>
+      <td>SOFTWARE ENGINEER</td>
+      <td>150,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>LYFT</td>
+      <td>SOFTWARE ENGINEER</td>
+      <td>150,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>LYFT</td>
+      <td>SOFTWARE ENGINEER</td>
+      <td>155,000</td>
+      <td>SAN FRANCISCO, CA</td>
+    </tr>
+
+  </tbody>
+</div>
+</table>
+</div>
+<script>
+function myRole() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+</body>
+</html>
